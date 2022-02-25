@@ -1,5 +1,5 @@
 <div class="search-wrapper">
-  <label for="search">Search Harry Potter Character</label>
+  <label for="search">Search Character</label>
   <input type="search" id="search" [formControl]="searchInput" [matAutocomplete]="auto" />
 
   <mat-autocomplete #auto="matAutocomplete">
@@ -7,4 +7,6 @@
       {{option}}
     </mat-option>
   </mat-autocomplete>
+
+  <p *ngIf="!searchInput.value">Start typing a Harry Pottter character</p>
 </div>
