@@ -1,6 +1,10 @@
 <div class="search-wrapper">
-  <label for="search">Search a Character</label>
-  <input type="search" id="search" />
-</div>
+  <label for="search">Search Harry Potter Character</label>
+  <input type="search" id="search" [formControl]="searchInput" [matAutocomplete]="auto" />
 
-<app-custom-card></app-custom-card>
+  <mat-autocomplete #auto="matAutocomplete">
+    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+      {{option}}
+    </mat-option>
+  </mat-autocomplete>
+</div>
